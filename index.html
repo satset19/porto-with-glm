@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satriyo Laksono - Portfolio</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <script>
+        // Reset scroll position before page loads
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
+</head>
+<body>
+    <!-- WebGL Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Stats Performance Monitor -->
+    <div id="stats"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav__logo">
+            <a href="https://github.com/satset19" target="_blank" rel="noopener" class="nav__logo-link">
+                <span class="glitch-text" data-text="SATRIYO">SATRIYO</span>
+            </a>
+        </div>
+        <ul class="nav__menu">
+            <li><a href="#hero" class="nav__link">Home</a></li>
+            <li><a href="#projects" class="nav__link">Projects</a></li>
+            <li><a href="#game" class="nav__link">Game</a></li>
+            <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__github-profile">
+            <a href="https://github.com/satset19" target="_blank" rel="noopener" class="nav__github-link">
+                <svg class="nav__github-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section (0-30% scroll) -->
+        <section id="hero" class="section section--hero">
+            <div class="hero__content">
+                <div class="hero__profile">
+                    <div class="hero__avatar-wrapper">
+                        <img src="https://avatars.githubusercontent.com/u/123132515?v=4" alt="Satriyo Laksono" class="hero__avatar" id="hero-avatar">
+                        <div class="hero__avatar-glow"></div>
+                    </div>
+                    <div class="hero__badges" id="hero-badges">
+                        <span class="hero__badge">Full Stack Developer</span>
+                        <span class="hero__badge">Open Source Enthusiast</span>
+                    </div>
+                </div>
+                <h1 class="hero__title glitch-text" data-text="SATRIYO LAKSONO">
+                    <span class="hero__title-line">SATRIYO</span>
+                    <span class="hero__title-line">LAKSONO</span>
+                </h1>
+                <p class="hero__subtitle type-writer" data-text="Full Stack Developer specializing in Vue.js, TypeScript, and creative web experiences">
+                    Full Stack Developer specializing in Vue.js, TypeScript, and creative web experiences
+                </p>
+                <div class="hero__bio" id="hero-bio">
+                    Passionate about building modern web applications with cutting-edge technologies. Currently exploring WebGL, Three.js, and AI-powered interfaces.
+                </div>
+                <div class="hero__actions">
+                    <a href="#projects" class="btn btn--3d">
+                        <span class="btn__text">Explore Work</span>
+                        <span class="btn__glitch"></span>
+                    </a>
+                    <a href="https://github.com/satset19" target="_blank" rel="noopener" class="btn btn--outline">
+                        <span class="btn__text">GitHub Profile</span>
+                        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero__scroll-indicator">
+                <span class="scroll-text">Scroll to Explore</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Projects Section (30-70% scroll) -->
+        <section id="projects" class="section section--projects">
+            <div class="section__header">
+                <h2 class="section__title glitch-text" data-text="MY PROJECTS">
+                    <span class="section__title-text">MY</span>
+                    <span class="section__title-text">PROJECTS</span>
+                </h2>
+                <p class="section__subtitle">A collection of my open-source contributions and personal projects</p>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="projects__filter">
+                <button class="filter__btn filter__btn--active" data-filter="all">All</button>
+                <button class="filter__btn" data-filter="javascript">JavaScript</button>
+                <button class="filter__btn" data-filter="typescript">TypeScript</button>
+                <button class="filter__btn" data-filter="vue">Vue.js</button>
+                <button class="filter__btn" data-filter="other">Other</button>
+            </div>
+
+            <!-- Projects Grid - Dynamic Content -->
+            <div class="projects__grid" id="projects-grid">
+                <!-- Loading State -->
+                <div class="projects__loading" id="projects-loading">
+                    <div class="loading__spinner"></div>
+                    <p class="loading__text">Fetching repositories from GitHub...</p>
+                </div>
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+
+            <!-- GitHub Statistics -->
+            <div class="projects__stats" id="github-stats">
+                <div class="stat__item">
+                    <span class="stat__number" id="stat-repos">0</span>
+                    <span class="stat__label">Public Repositories</span>
+                </div>
+                <div class="stat__item">
+                    <span class="stat__number" id="stat-stars">0</span>
+                    <span class="stat__label">Total Stars</span>
+                </div>
+                <div class="stat__item">
+                    <span class="stat__number" id="stat-forks">0</span>
+                    <span class="stat__label">Total Forks</span>
+                </div>
+                <div class="stat__item">
+                    <span class="stat__number" id="stat-followers">0</span>
+                    <span class="stat__label">GitHub Followers</span>
+                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="projects__cta">
+                <a href="https://github.com/satset19?tab=repositories" target="_blank" rel="noopener" class="btn btn--outline">
+                    <span class="btn__text">View All Repositories</span>
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section id="game" class="section section--game">
+            <div class="game__content">
+                <h2 class="section__title glitch-text" data-text="MINIGAME">
+                    <span class="section__title-text">MINI</span>
+                    <span class="section__title-text">GAME</span>
+                </h2>
+                <p class="section__subtitle">Collect the falling fragments and avoid the red ones!</p>
+
+                <div class="game__container">
+                    <div class="game__canvas-wrapper">
+                        <canvas id="gameCanvas" class="game__canvas"></canvas>
+                        <div class="game__overlay" id="gameOverlay">
+                            <div class="game__start-screen">
+                                <h3 class="game__title">FRAGMENT COLLECTOR</h3>
+                                <p class="game__instructions">Click or press SPACE to start</p>
+                                <p class="game__instructions-small">Move mouse to control | Collect blue fragments | Avoid red ones</p>
+                                <button class="btn btn--3d game__start-btn" id="startGameBtn">
+                                    <span class="btn__text">START GAME</span>
+                                </button>
+                            </div>
+                            <div class="game__game-over-screen" id="gameOverScreen" style="display: none;">
+                                <h3 class="game__title">GAME OVER</h3>
+                                <p class="game__final-score">Score: <span id="finalScore">0</span></p>
+                                <p class="game__high-score">High Score: <span id="highScore">0</span></p>
+                                <button class="btn btn--3d game__restart-btn" id="restartGameBtn">
+                                    <span class="btn__text">PLAY AGAIN</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game__stats">
+                        <div class="game__stat">
+                            <span class="game__stat-label">SCORE</span>
+                            <span class="game__stat-value" id="currentScore">0</span>
+                        </div>
+                        <div class="game__stat">
+                            <span class="game__stat-label">LIVES</span>
+                            <span class="game__stat-value" id="livesCount">3</span>
+                        </div>
+                        <div class="game__stat">
+                            <span class="game__stat-label">LEVEL</span>
+                            <span class="game__stat-value" id="currentLevel">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section section--skills">
+            <div class="skills__content">
+                <h2 class="section__title glitch-text" data-text="TECH STACK">
+                    <span class="section__title-text">TECH</span>
+                    <span class="section__title-text">STACK</span>
+                </h2>
+                <p class="section__subtitle">Technologies I work with and contribute to</p>
+
+                <div class="skills__grid" id="skills-grid">
+                    <!-- Languages Section -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">Languages & Frameworks</h3>
+                        <div class="skills__list">
+                            <div class="skill__card skill__card--primary">
+                                <div class="skill__header">
+                                    <span class="skill__dot" style="--skill-color: #3178C6"></span>
+                                    <span class="skill__name">TypeScript</span>
+                                </div>
+                                <div class="skill__level">
+                                    <div class="skill__bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill__card skill__card--primary">
+                                <div class="skill__header">
+                                    <span class="skill__dot" style="--skill-color: #F7DF1E"></span>
+                                    <span class="skill__name">JavaScript</span>
+                                </div>
+                                <div class="skill__level">
+                                    <div class="skill__bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill__card skill__card--primary">
+                                <div class="skill__header">
+                                    <span class="skill__dot" style="--skill-color: #4FC08D"></span>
+                                    <span class="skill__name">Vue.js</span>
+                                </div>
+                                <div class="skill__level">
+                                    <div class="skill__bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill__card skill__card--primary">
+                                <div class="skill__header">
+                                    <span class="skill__dot" style="--skill-color: #E34F26"></span>
+                                    <span class="skill__name">HTML/CSS</span>
+                                </div>
+                                <div class="skill__level">
+                                    <div class="skill__bar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Libraries Section -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">Tools & Libraries</h3>
+                        <div class="skills__list skills__list--compact">
+                            <span class="skill__tag">Three.js</span>
+                            <span class="skill__tag">GSAP</span>
+                            <span class="skill__tag">Vite</span>
+                            <span class="skill__tag">Git</span>
+                            <span class="skill__tag">Node.js</span>
+                            <span class="skill__tag">npm/pnpm</span>
+                            <span class="skill__tag">ESLint</span>
+                            <span class="skill__tag">Prettier</span>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Language Stats -->
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">GitHub Language Distribution</h3>
+                        <div class="language__stats" id="language-stats">
+                            <!-- Will be populated dynamically -->
+                            <div class="language__stat">
+                                <span class="language__color" style="background: #3178C6"></span>
+                                <span class="language__name">TypeScript</span>
+                                <span class="language__percent">0%</span>
+                            </div>
+                            <div class="language__stat">
+                                <span class="language__color" style="background: #F7DF1E"></span>
+                                <span class="language__name">JavaScript</span>
+                                <span class="language__percent">0%</span>
+                            </div>
+                            <div class="language__stat">
+                                <span class="language__color" style="background: #4FC08D"></span>
+                                <span class="language__name">Vue</span>
+                                <span class="language__percent">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (70-100% scroll) -->
+        <section id="contact" class="section section--contact">
+            <div class="contact__content">
+                <h2 class="section__title glitch-text" data-text="GET IN TOUCH">
+                    <span class="section__title-text">GET IN</span>
+                    <span class="section__title-text">TOUCH</span>
+                </h2>
+                <p class="section__subtitle">Let's collaborate on something amazing</p>
+
+                <!-- Contact Cards -->
+                <div class="contact__cards">
+                    <a href="https://github.com/satset19" target="_blank" rel="noopener" class="contact__card">
+                        <div class="contact__card-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <div class="contact__card-content">
+                            <span class="contact__card-label">GitHub</span>
+                            <span class="contact__card-value">@satset19</span>
+                        </div>
+                    </a>
+
+                    <a href="https://gitlab.com/satset19" target="_blank" rel="noopener" class="contact__card">
+                        <div class="contact__card-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .41.26l2.47 7.6h8.6l2.47-7.6A.43.43 0 0 1 19.18 2a.42.42 0 0 1 .41.26l2.44 7.51 1.22 3.78a.84.84 0 0 1-.3.94z"/>
+                            </svg>
+                        </div>
+                        <div class="contact__card-content">
+                            <span class="contact__card-label">GitLab</span>
+                            <span class="contact__card-value">@satset19</span>
+                        </div>
+                    </a>
+
+                    <a href="mailto:satriyo.dev@gmail.com" class="contact__card">
+                        <div class="contact__card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact__card-content">
+                            <span class="contact__card-label">Email</span>
+                            <span class="contact__card-value">satriyo.dev@gmail.com</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="contact__social">
+                    <a href="https://github.com/satset19" target="_blank" rel="noopener" class="social__link" title="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://gitlab.com/satset19" target="_blank" rel="noopener" class="social__link" title="GitLab">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .41.26l2.47 7.6h8.6l2.47-7.6A.43.43 0 0 1 19.18 2a.42.42 0 0 1 .41.26l2.44 7.51 1.22 3.78a.84.84 0 0 1-.3.94z"/>
+                        </svg>
+                    </a>
+                    <a href="https://satset.dev" target="_blank" rel="noopener" class="social__link" title="Website">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Cursor -->
+    <div class="cursor">
+        <div class="cursor__dot"></div>
+        <div class="cursor__outline"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/fragment-game.js"></script>
+</body>
+</html>
