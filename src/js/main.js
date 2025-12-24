@@ -54,7 +54,7 @@ const CONFIG = {
 
     // Fragment System
     fragments: {
-        count: 800,
+        count: 400, // Reduced from 800 for better performance
         baseSize: 0.15,
         explosionRadius: 4,
         fragmentGeometries: ['tetrahedron', 'box', 'octahedron']
@@ -63,7 +63,8 @@ const CONFIG = {
     // Performance
     performance: {
         targetFPS: 60,
-        enableStats: true,
+        enableStats: false, // Disabled in production
+        enableFPSCap: true, // Cap FPS to target
         lodDistances: [5, 15, 30] // Distance thresholds for LOD
     },
 
@@ -615,7 +616,7 @@ class ParticleSystem {
     }
 
     createParticles() {
-        const particleCount = 5000;
+        const particleCount = 2000; // Reduced from 5000 for performance
         const geometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
@@ -993,6 +994,10 @@ class App {
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
 
+        // Initialize FPS throttling
+        this.lastFrameTime = 0;
+        this.frameInterval = 1000 / CONFIG.performance.targetFPS;
+
         // Initial animations
         gsap.from('#canvas-container', {
             opacity: 0,
@@ -1010,6 +1015,18 @@ class App {
 
     animate(time = 0) {
         requestAnimationFrame(this.animate.bind(this));
+
+        // FPS capping - only render if enough time has passed
+        if (CONFIG.performance.enableFPSCap) {
+            const elapsed = time - this.lastFrameTime;
+
+            if (elapsed < this.frameInterval) {
+                return; // Skip this frame
+            }
+
+            // Adjust lastFrameTime to account for any excess time
+            this.lastFrameTime = time - (elapsed % this.frameInterval);
+        }
 
         this.performanceMonitor?.begin();
 
